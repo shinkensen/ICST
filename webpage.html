@@ -1,37 +1,155 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <head>
-            <h1>TABLE OF INFORMATION</h1>
-        </head>
-        <table>
-            <thead>
-                <tr>
-                    <th>Time complexities</th>
-                    <th>      Type        </th>
-                    <th>                  </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>O(n)</td>
-                </tr>
-                <tr>
-                    <td>O(1)</td>
-                </tr>
-                <tr>
-                    <td>O(nlogN)</td>
-                </tr>
-                <tr>
-                    <td>O(log N)</td>
-                </tr>
-                <tr>
-                    <td>O(n^2)</td>
-                </tr>
-                <tr>
-                    <td>O(2^n)</td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Table of Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #222;
+        }
+
+        table {
+            width: 70%;
+            margin: auto;
+            border-collapse: collapse;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: #ff9100;
+            color: rgb(255, 255, 255);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background: #e9f5ff;
+            transition: 0.3s;
+        }
+
+        th {
+            font-size: 1.1rem;
+        }
+
+        svg {
+            fill: #ff7300;
+            height: 30px;
+            transition: transform 0.2s ease, fill 0.2s ease;
+        }
+
+        td svg:hover {
+            transform: scale(1.2);
+            fill: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <h1>TABLE OF TYPES</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Time complexities</th>
+                <th>Type</th>
+                <th>     </th>
+                <th>Explanations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>O(n)</td>
+                <td>Linear</td>
+                <td>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                    </svg>
+                </td>
+                <td>Time to complete program scales linearly as n increases. Example: Looping through an array of n elements once.</td>
+            </tr>
+            <tr>
+                <td>O(1)</td>
+                <td>Constant</td>
+                <td>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                    </svg>
+                </td>
+                <td>Runs the same amount of time no matter how large n is
+Example: Math operations, accessing elements in an array with an index.
+</td>
+            </tr>
+            <tr>
+                <td>O(n log n)</td>
+                <td>Linearithmic</td>
+                <td>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                    </svg>
+                </td>
+                <td>Slightly slower than logarithmic time but faster than quadratic time. Usually a linear time step combined with a logarithmic time step.
+Example: Looping through a range of values, performing binary search on an array to search for that selected value, Merge Sort, Quick Sort
+ 
+</td>
+            </tr>
+            <tr>
+                <td>O(log n)</td>
+                <td>Logarithmic</td>
+                <td>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                    </svg>
+                </td>
+                <td>Time grows logarithmically, increasing 1 step each time N doubles. Can be thought of as cutting the input size in half each step. 
+Example: Binary search
+</td>
+            </tr>
+            <tr>
+                <td>O(n²)</td>
+                <td>Quadratic</td>
+                <td>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                    </svg>
+                </td>
+                <td>
+As N grows, runtime grows proportionally to the square of N. 
+Example: Nested for loop to search for a given value in a 2D array. Checking all pairs in an array. 
+
+                </td>
+            </tr>
+            <tr>
+                <td>O(2^n)</td>
+                <td>Exponential</td>
+                <td>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/>
+                    </svg>
+                </td>
+                <td>Time grows exponentially as N increases. 
+Example: Looping through all subsets of a set with size N: 
+</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
 </html>

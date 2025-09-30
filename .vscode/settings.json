@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "ICST"
+    "liveServer.settings.multiRootWorkspaceName": "ICST",
+    "liveServer.settings.port": 5501
 }
