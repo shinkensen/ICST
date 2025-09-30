@@ -1,18 +1,19 @@
 let rocket= document.getElementById("rocket");
 let gameArea = document.getElementById("game-area");
-let height=0;
+let height=200;
 let start=false;
 let asteroidsX=[],asteroidsY=[],asteroidsSize=[]
 let health=3;
+rocket.style.transform = `translateY(${height}px) rotate(90deg) `;
 document.addEventListener("keydown",function(event){
-    if ((event.key=== 's')&&height<540){
+    if ((event.key=== 's')&&height<740){
         height+=10;
-        rocket.style.transform = `rotate(45deg) translateY(${height}px)`;
+        rocket.style.transform = `translateY(${height}px) rotate(90deg) `;
 
     }
-    if (event.key=== 'w' &&height>0){
+    if (event.key=== 'w' &&height>200){
         height-=10;
-        rocket.style.transform = `rotate(45deg) translateY(${height}px)`;
+        rocket.style.transform = `translateY(${height}px) rotate(90deg) `;
 
     }
 })
@@ -37,7 +38,14 @@ function spawnAsteroid() {
         clearInterval(interval);
         asteroid.remove();
         }
-        if (x<150 && (y+100>height&&y-100<height) &&!done){
+        let rocketRect = rocket.getBoundingClientRect();
+        let asteroidRect = asteroid.getBoundingClientRect();
+        if (
+        rocketRect.left < asteroidRect.right &&
+        rocketRect.right > asteroidRect.left &&
+        rocketRect.top < asteroidRect.bottom &&
+        rocketRect.bottom > asteroidRect.top&& !done
+        ) {
             asteroid.remove();
             health--;
             console.log(health);
