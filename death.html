@@ -21,6 +21,10 @@
     </head>
     <body style="background-color: #111;">
         <h1 style="font-size: 6em;color:white;text-align:center;margin-top:200px;">Game Over</h1>
+        <h2 id="score" style="color:white;text-align:center">Score: </h2>
+        <script>
+            document.getElementById("score").textContent ="High Score: " + localStorage.getItem("score");
+        </script>
         <a href="index.html" >Home</a>
     </body>
 </html>

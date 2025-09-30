@@ -1,10 +1,9 @@
 let rocket= document.getElementById("rocket");
 let gameArea = document.getElementById("game-area");
 let health1=document.getElementById("health");
-let score=document.getElementById("score");
+let score1=document.getElementById("score");
+let score=0;
 let height=200;
-let start=false;
-let asteroidsX=[],asteroidsY=[],asteroidsSize=[]
 let health=3;
 rocket.style.transform = `translateY(${height}px) rotate(90deg) `;
 document.addEventListener("keydown",function(event){
@@ -70,10 +69,22 @@ function spawnAsteroid() {
             health--;
             console.log(health);
             done=true;
+            health1.textContent= `Health: ${health}`
             if (health<=0){
                 window.location.href= "death.html";
+                if (localStorage.getItem("score") <score){
+                    localStorage.setItem("score",score)
+                }
+                else if (localStorage.getItem("score")==null){
+                    localStorage.setItem("score",score);
+                }
             }
         }
     }, 30);
 }
+function scorer(){
+    score++;
+    score1.textContent = "Score: " + score;
+}
 setInterval(spawnAsteroid, 1000);
+setInterval(scorer,100);
