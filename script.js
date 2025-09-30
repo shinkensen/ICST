@@ -5,6 +5,8 @@ let score1=document.getElementById("score");
 let score=0;
 let height=120;
 let health=3;
+const audio = new Audio('images/bgmusic.mp3');
+            audio.play();
 rocket.style.transform = `translateY(${height}px) rotate(90deg) `;
 document.addEventListener("keydown",function(event){
     if ((event.key=== 's')&&height<640){
@@ -66,6 +68,8 @@ function spawnAsteroid() {
         rocketRect.bottom > asteroidRect.top&& !done
         ) {
             asteroid.remove();
+            const audio = new Audio('images/asteroid.mp3');
+            audio.play();
             health--;
             console.log(health);
             done=true;
@@ -134,6 +138,8 @@ function spawnPowerup() {
             console.log(health);
             done=true;
             health1.textContent= `Health: ${health}`
+            const audio = new Audio('images/powerup.mp3');
+            audio.play();
         }
     }, 30);
 }
