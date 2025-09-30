@@ -1,5 +1,7 @@
 let rocket= document.getElementById("rocket");
 let gameArea = document.getElementById("game-area");
+let health1=document.getElementById("health");
+let score=document.getElementById("score");
 let height=200;
 let start=false;
 let asteroidsX=[],asteroidsY=[],asteroidsSize=[]
@@ -22,22 +24,25 @@ function spawnAsteroid() {
     let asteroid = document.createElement("div");
     asteroid.classList.add("asteroid");
 
-    let y = Math.floor(Math.random() * 750), w= Math.floor(Math.random() * 200)+50;;
+    let y = Math.floor(Math.random() * 850), w= Math.floor(Math.random() * 200)+50;;
     asteroid.style.top = `${y}px`;
     asteroid.style.width = `${w}px`;
     asteroid.style.height = `${w}px`;
     asteroid.style.left = "100%";
     let label = document.createElement("span");
     label.classList.add("label");
-
+    let spd=12;
     if (w < 100) {
     label.textContent = "O(n)";
     } else if (w < 150) {
         label.textContent = "O(n²)";
+        spd=8;
     } else if (w < 200) {
         label.textContent = "O(n³)";
+        spd=4;
     } else {
         label.textContent = "O(2ⁿ)";
+        spd=3;
     }
     label.style.color="white";
     label.style.textAlign="center";
@@ -47,7 +52,7 @@ function spawnAsteroid() {
     let x = window.innerWidth;
     let done=false;
     let interval = setInterval(() => {
-        x -= 5;
+        x -= spd;
         asteroid.style.left = `${x}px`;
         if (x < -50) {
         clearInterval(interval);
@@ -65,6 +70,9 @@ function spawnAsteroid() {
             health--;
             console.log(health);
             done=true;
+            if (health<=0){
+                window.location.href= "death.html";
+            }
         }
     }, 30);
 }

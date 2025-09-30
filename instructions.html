@@ -7,19 +7,28 @@
                 .font{
                     font-family: 'Trebuchet MS';
                     color: white;
+                    transition: 0.1s ease-in-out;
                 }
-                .background{
-                    background-image: url("https://uploads.onecompiler.io/43y7ka4gn/43y7hs5mf/space%20background%20img.png");
-                    background-size: cover;
-                    background-position: center;
-                    background-attachment: fixed;
-                    min-height: 100vh;
+                .font:hover{
+                    color:#222;
+                }
+                .title{
+                    color:white;
+                    transition: 0.1s ease-in-out;
+                    border:3px solid white
+                }
+                .title:hover{
+                    color:#222;
+                    border:3px solid #222;
                 }
                 </style>
             </head>
-            <body>
-            <div class="background" style="padding: 5px">
-                <h1 style="text-align: center" class="font">Directions:</h1>
+            <body style="background-color:#555">
+                <a href="index.html">
+                <svg style="width:50px;margin-left:20px;fill:white"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M41.4 342.6C28.9 330.1 28.9 309.8 41.4 297.3L169.4 169.3C178.6 160.1 192.3 157.4 204.3 162.4C216.3 167.4 224 179.1 224 192L224 256L560 256C586.5 256 608 277.5 608 304L608 336C608 362.5 586.5 384 560 384L224 384L224 448C224 460.9 216.2 472.6 204.2 477.6C192.2 482.6 178.5 479.8 169.3 470.7L41.3 342.7z"/></svg>
+                </a>
+                <div class="background" style="padding: 5px">
+                <h1 class="title" style="text-align: center;width:fit-content;padding:5px;border-radius:10px;padding-left:20px;padding-right:20px;display:block;margin:0 auto;margin-top:50px;margin-bottom:50px" class="font">Directions:</h1>
                 <ul>
                     <h2 class="font">1. Dodge the meteors and choose the correct time complexities!</h2>
                     <h2 class="font">2. Make sure to watch your health and don’t die!</h2>
