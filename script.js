@@ -23,7 +23,7 @@ function spawnAsteroid() {
     let asteroid = document.createElement("div");
     asteroid.classList.add("asteroid");
 
-    let y = Math.floor(Math.random() * 850), w= Math.floor(Math.random() * 200)+50;;
+    let y = Math.floor(Math.random() * 740), w= Math.floor(Math.random() * 200)+50;;
     asteroid.style.top = `${y}px`;
     asteroid.style.width = `${w}px`;
     asteroid.style.height = `${w}px`;
@@ -87,7 +87,7 @@ function spawnPowerup() {
     let powerup = document.createElement("div");
     powerup.classList.add("powerup");
 
-    let y = Math.floor(Math.random() * 850), w= Math.floor(Math.random() * 200)+50;;
+    let y = Math.floor(Math.random() * 740), w= Math.floor(Math.random() * 200)+50;;
     powerup.style.top = `${y}px`;
     powerup.style.width = `${w}px`;
     powerup.style.height = `${w}px`;
