@@ -7,7 +7,7 @@ let height=120;
 let health=3;
 rocket.style.transform = `translateY(${height}px) rotate(90deg) `;
 document.addEventListener("keydown",function(event){
-    if ((event.key=== 's')&&height<740){
+    if ((event.key=== 's')&&height<640){
         height+=10;
         rocket.style.transform = `translateY(${height}px) rotate(90deg) `;
 
