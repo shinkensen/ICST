@@ -27,7 +27,22 @@ function spawnAsteroid() {
     asteroid.style.width = `${w}px`;
     asteroid.style.height = `${w}px`;
     asteroid.style.left = "100%";
+    let label = document.createElement("span");
+    label.classList.add("label");
 
+    if (w < 100) {
+    label.textContent = "O(n)";
+    } else if (w < 150) {
+        label.textContent = "O(n²)";
+    } else if (w < 200) {
+        label.textContent = "O(n³)";
+    } else {
+        label.textContent = "O(2ⁿ)";
+    }
+    label.style.color="white";
+    label.style.textAlign="center";
+    label.style.fontSize= "1.5em";
+    asteroid.appendChild(label);
     gameArea.appendChild(asteroid);
     let x = window.innerWidth;
     let done=false;
