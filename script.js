@@ -3,7 +3,7 @@ let gameArea = document.getElementById("game-area");
 let health1=document.getElementById("health");
 let score1=document.getElementById("score");
 let score=0;
-let height=200;
+let height=120;
 let health=3;
 rocket.style.transform = `translateY(${height}px) rotate(90deg) `;
 document.addEventListener("keydown",function(event){
@@ -12,7 +12,7 @@ document.addEventListener("keydown",function(event){
         rocket.style.transform = `translateY(${height}px) rotate(90deg) `;
 
     }
-    if (event.key=== 'w' &&height>200){
+    if (event.key=== 'w' &&height>120){
         height-=10;
         rocket.style.transform = `translateY(${height}px) rotate(90deg) `;
 
@@ -82,9 +82,65 @@ function spawnAsteroid() {
         }
     }, 30);
 }
+
+function spawnPowerup() {
+    let powerup = document.createElement("div");
+    powerup.classList.add("powerup");
+
+    let y = Math.floor(Math.random() * 850), w= Math.floor(Math.random() * 200)+50;;
+    powerup.style.top = `${y}px`;
+    powerup.style.width = `${w}px`;
+    powerup.style.height = `${w}px`;
+    powerup.style.left = "100%";
+    let label = document.createElement("span");
+    label.classList.add("label");
+    let spd=12;
+    if (w < 100) {
+    label.textContent = "O(0)";
+    } else if (w < 150) {
+        label.textContent = "O(1)";
+        spd=8;
+    } else if (w < 200) {
+        label.textContent = "O(log(n))";
+        spd=4;
+    } else {
+        label.textContent = "O(n log(n))";
+        spd=3;
+    }
+    label.style.color="white";
+    label.style.textAlign="center";
+    label.style.fontSize= "1.5em";
+    powerup.appendChild(label);
+    gameArea.appendChild(powerup);
+    let x = window.innerWidth;
+    let done=false;
+    let interval = setInterval(() => {
+        x -= spd;
+        powerup.style.left = `${x}px`;
+        if (x < -50) {
+        clearInterval(interval);
+        powerup.remove();
+        }
+        let rocketRect = rocket.getBoundingClientRect();
+        let powerupRect = powerup.getBoundingClientRect();
+        if (
+        rocketRect.left < powerupRect.right &&
+        rocketRect.right > powerupRect.left &&
+        rocketRect.top < powerupRect.bottom &&
+        rocketRect.bottom > powerupRect.top&& !done
+        ) {
+            powerup.remove();
+            health++;
+            console.log(health);
+            done=true;
+            health1.textContent= `Health: ${health}`
+        }
+    }, 30);
+}
 function scorer(){
     score++;
     score1.textContent = "Score: " + score;
 }
 setInterval(spawnAsteroid, 1000);
+setInterval(spawnPowerup, 10000);
 setInterval(scorer,100);

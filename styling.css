@@ -11,6 +11,12 @@
     background-image: url('images/asteroid.png');
     background-size: cover;
     }
+    .powerup {
+        position: absolute;
+    border:3px solid rgb(0,255,0);
+    border-radius: 500000000px;
+    background-color: rgb(0,255,0);
+    }
 #death-screen {
     position: fixed;
     top: 0;
